@@ -1,0 +1,16 @@
+{
+	"name": "Python 3",
+	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+	"postCreateCommand": "pip3 install --user -r .devcontainer/requirements.txt",
+	"postStartCommand": "pre-commit install --install-hooks",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"charliermarsh.ruff",
+				"eamodio.gitlens",
+				"redhat.vscode-yaml",
+				"EditorConfig.EditorConfig"
+			]
+		}
+	}
+}

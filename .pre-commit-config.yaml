@@ -1,0 +1,40 @@
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+
+default_stages:
+  - pre-commit
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: c4a0b883114b00d8d76b479c820ce7950211c99b # v4.5.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: no-commit-to-branch
+      - id: trailing-whitespace
+
+  - repo: https://github.com/rhysd/actionlint
+    rev: c6bd06256dd700a45e483869bcdcf304239393a6 # v1.6.27
+    hooks:
+      - id: actionlint-system
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: 772d7ffaeee5d611a904cc564a3fe3c7ad927635 # v3.2.0
+    hooks:
+      - id: conventional-pre-commit
+        stages:
+          - commit-msg
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: 596470fba20d04adc68ec7903ff69a12e5e1a8d3 # v0.4.2
+    hooks:
+      - id: ruff
+      - id: ruff-format
